@@ -1,0 +1,41 @@
+# User directories
+Desktop/
+Documents/
+Downloads/
+Notes/
+Pictures/
+Projects/
+Videos/
+
+# Local-only directories
+.cache/
+.cargo/
+.rustup/
+.docker/
+.vscode/
+.npm/
+.java/
+.parsec/
+.eclipse/
+.pki/
+.wakatime/
+.m2/
+.mozilla/
+.thunderbird/
+.gnome/
+.dotfiles/
+.vim/
+
+# Local-only files
+.Xauthority
+.wakatime.cfg
+.wakatime.bdb
+.wakatime.log
+.wakatime-internal.cfg
+.yarnrc
+.viminfo
+
+# History files
+.bash_history
+.node_repl_history
+.python_history
