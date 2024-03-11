@@ -5,28 +5,37 @@ if not ss -axn | grep -q $SSH_AUTH_SOCK
     disown (pidof socat)
 end
 
+
 # Global environment variables
 set -x EDITOR vim
 set -x GOPATH ~/.local/go
+
 
 function last_history_item
 	echo $history[1]
 end
 
+
 if status is-login
-	# pyenv init --path | source
 	rtx activate fish | source
 end
 
-if status is-interactive
-	# pyenv init - | source
-	rtx activate fish | source
 
+if status is-interactive
+    # rtx activate takes a few ms, so cache its output to save some time.
+    if not test -e ~/.cache/rtx/activate.fish
+        rtx activate --status fish > ~/.cache/rtx/activate.fish
+    end
+    source ~/.cache/rtx/activate.fish
+
+    # Misc. aliases
+    # Last command, like in bash and zsh
+	abbr !! --position anywhere --function last_history_item
 	abbr md mkdir
 	abbr takeown sudo chown -v $(whoami):$(whoami)
-	abbr e "explorer.exe ."
-	abbr !! --position anywhere --function last_history_item
+	abbr e xdg-open .
 
+    # Add verbose and interactive by default
 	abbr cp cp -vi
 	abbr mv mv -vi
 	abbr rm rm -vi
@@ -52,12 +61,14 @@ if status is-interactive
 	abbr dcl docker compose logs
 	abbr dcp docker compose ps
 	abbr dcr docker compose run
-
-	# Dotfiles
-	# abbr dots 'git --git-dir ~/.dotfiles --work-tree ~'
+    
+    # Tmux
+    abbr tl tmux ls
+    abbr ta tmux attach
 end
 
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
