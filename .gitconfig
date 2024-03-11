@@ -1,0 +1,30 @@
+# This file should contain the [user] section
+# with name and email set, for example:
+# [user]
+# 	name = Username
+# 	email = username@example.com
+#
+# It can also contain additional per-directory configs,
+# for example:
+# [includeIf "gitdir:~/Projects/Work/"]
+# 	path = ~/Projects/Work/.gitconfig
+# [includeIf "gitdir:~/Projects/School/"]
+# 	path = ~/Projects/School/.gitconfig
+[include]
+	path = ~/.user.gitconfig
+
+
+[init]
+	defaultBranch = master
+
+[pull]
+	ff = only
+
+
+[alias]
+	lg = log --graph --abbrev-commit --decorate --format="format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
+	unpushed = log --branches --not --remotes --no-walk --decorate --oneline
+	# FIXME: Diff against the nearest parent, not `dev`
+	branch-summary = "!f() { git diff --compact-summary $(git merge-base ${1:-dev} @) @; }; f"
+	branch-diff = "!f() { git diff $(git merge-base ${1:-dev} @) @; }; f"
+
