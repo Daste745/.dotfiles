@@ -1,10 +1,12 @@
 # WSL-only config
-if test -x "$(which wsl.exe)"
-    # Create an ssh auth sock tunnel with Windows' OpenSSH
-    if not ss -axn | grep -q $SSH_AUTH_SOCK
-        rm -f $SSH_AUTH_SOCK
-        socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"/usr/local/bin/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &
-        disown (pidof socat)
+if test -n "$WSL_DISTRO_NAME"
+    if test -x "$(which socat 2>/dev/null)"
+        # Create an ssh auth sock tunnel with Windows' OpenSSH
+        if not ss -axn | grep -q $SSH_AUTH_SOCK
+            rm -f $SSH_AUTH_SOCK
+            socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"/usr/local/bin/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &
+            disown (pidof socat)
+        end
     end
 end
 
