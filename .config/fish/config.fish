@@ -58,6 +58,8 @@ if status is-interactive
 	abbr gp git push
 	abbr gst git stash
 	abbr gres git restore
+    abbr gr git rebase
+    abbr gri git rebase -i
 
 	# Docker
 	abbr dc docker compose
