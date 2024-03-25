@@ -34,11 +34,13 @@ if status is-interactive
     source ~/.cache/rtx/activate.fish
 
     # Misc. aliases
-    # Last command, like in bash and zsh
+    ## Last command, like in bash and zsh
 	abbr !! --position anywhere --function last_history_item
 	abbr md mkdir
 	abbr takeown sudo chown -v $(whoami):$(whoami)
 	abbr e xdg-open .
+    ## Shortcut to the dotfiles directory
+    abbr dots cd ~/.dotfiles
 
     # Add verbose and interactive by default
 	abbr cp cp -vi
