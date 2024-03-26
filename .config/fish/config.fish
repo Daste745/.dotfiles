@@ -21,17 +21,23 @@ function last_history_item
 end
 
 
-if status is-login
-	rtx activate fish | source
-end
-
-
-if status is-interactive
+function activate_rtx
     # rtx activate takes a few ms, so cache its output to save some time.
     if not test -e ~/.cache/rtx/activate.fish
         rtx activate --status fish > ~/.cache/rtx/activate.fish
     end
     source ~/.cache/rtx/activate.fish
+end
+
+
+if status is-login
+    activate_rtx
+end
+
+
+if status is-interactive
+    activate_rtx
+    zoxide init fish | source
 
     # Misc. aliases
     ## Last command, like in bash and zsh
