@@ -47,6 +47,7 @@ if status is-interactive
 	abbr e xdg-open .
     ## Shortcut to the dotfiles directory
     abbr dots cd ~/.dotfiles
+    bind \cX 'edit_command_buffer'
 
     # Add verbose and interactive by default
 	abbr cp cp -vi
