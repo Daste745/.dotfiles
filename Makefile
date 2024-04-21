@@ -1,5 +1,7 @@
 STOW=stow -vv
 
+.PHONY: stow adopt
+
 stow:
 	$(STOW) .
 

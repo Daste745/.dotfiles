@@ -13,7 +13,7 @@ set ai
 set si
 
 " Highlight matching brackets
-set showmatch
+" set showmatch
 " Search non-sensitively, unless capital chars are present
 set ignorecase
 set smartcase
