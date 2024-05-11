@@ -11,6 +11,12 @@ if test -n "$WSL_DISTRO_NAME"
 end
 
 
+# MacOS-only config
+if test -x /opt/homebrew/bin/brew
+    /opt/homebrew/bin/brew shellenv | source
+end
+
+
 # Global environment variables
 set -x EDITOR vim
 set -x GOPATH ~/.local/go
