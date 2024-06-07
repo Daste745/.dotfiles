@@ -21,4 +21,4 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 Makefile
-
+install

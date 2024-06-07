@@ -1,0 +1,16 @@
+#!/bin/bash -eu
+
+CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"
+if [ ! -d "$CONFIG" ]; then
+    echo "Creating $CONFIG..."
+    mkdir -p "$CONFIG"
+fi
+
+TMUX_DIR="$CONFIG/tmux"
+TPM_DIR="$TMUX_DIR/plugins/tpm"
+
+if [ ! -d "$TPM_DIR" ]; then
+    echo "Installing TPM..."
+    mkdir -p "$TMUX_DIR/plugins"
+    git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+fi
