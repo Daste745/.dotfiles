@@ -6,6 +6,8 @@ if [ ! -d "$CONFIG" ]; then
     mkdir -p "$CONFIG"
 fi
 
+make stow
+
 TMUX_DIR="$CONFIG/tmux"
 TPM_DIR="$TMUX_DIR/plugins/tpm"
 
