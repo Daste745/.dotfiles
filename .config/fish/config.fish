@@ -86,8 +86,9 @@ if status is-interactive
 	abbr dcl docker compose logs
 	abbr dcp docker compose ps
 	abbr dcr docker compose run
-    
+
     # Tmux
+    abbr tn tmux new-session
     abbr tl tmux ls
     abbr ta tmux attach
 end
