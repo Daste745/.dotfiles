@@ -71,8 +71,10 @@ if status is-interactive
 	abbr gdc git diff --cached
 	abbr gl git lg
 	abbr gp git push
+    abbr gpo git push origin @
 	abbr gst git stash
 	abbr gres git restore
+    ## Rebase
     abbr gr git rebase
     abbr gri git rebase -i
     abbr grc git rebase --continue
