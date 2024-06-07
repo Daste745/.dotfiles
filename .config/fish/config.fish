@@ -52,7 +52,7 @@ if status is-interactive
 	abbr takeown sudo chown -v $(whoami):$(whoami)
 	abbr e xdg-open .
     ## Shortcut to the dotfiles directory
-    abbr dots cd ~/.dotfiles
+    abbr dots z ~/.dotfiles
     bind --mode insert \cX 'edit_command_buffer'
 
     # Add verbose and interactive by default
