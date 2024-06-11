@@ -1,30 +1,6 @@
-# WSL-only config
-if test -n "$WSL_DISTRO_NAME"
-    if test -x "$(which socat 2>/dev/null)"
-        # Create an ssh auth sock tunnel with Windows' OpenSSH
-        if not ss -axn | grep -q $SSH_AUTH_SOCK
-            rm -f $SSH_AUTH_SOCK
-            socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"/usr/local/bin/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &
-            disown (pidof socat)
-        end
-    end
-end
-
-
-# MacOS-only config
-if test -x /opt/homebrew/bin/brew
-    /opt/homebrew/bin/brew shellenv | source
-end
-
-
 # Global environment variables
 set -x EDITOR vim
 set -x GOPATH ~/.local/go
-
-
-function last_history_item
-	echo $history[1]
-end
 
 
 function activate_mise
@@ -54,57 +30,18 @@ end
 
 if status is-login
     activate_mise
+    zoxide init fish | source
 end
 
 
 if status is-interactive
-    activate_mise
-    zoxide init fish | source
+    source ~/.config/fish/aliases.fish
 
-    # Misc. aliases
-    ## Last command, like in bash and zsh
-	abbr !! --position anywhere --function last_history_item
-	abbr md mkdir
-	abbr takeown sudo chown -v $(whoami):$(whoami)
-	abbr e xdg-open .
-    ## Shortcut to the dotfiles directory
-    abbr dots z ~/.dotfiles
+    # Edit the command buffer in $EDITOR with Ctrl+X
     bind --mode insert \cX 'edit_command_buffer'
-
-    # Add verbose and interactive by default
-	abbr cp cp -vi
-	abbr mv mv -vi
-	abbr rm rm -vi
-	abbr rmdir rmdir -v
-	abbr chmod chmod -v
-
-	# Git
-	abbr gs git status
-	abbr ga git add
-	abbr gap git add --patch
-	abbr gc git commit
-	abbr gd git diff
-	abbr gdc git diff --cached
-	abbr gl git lg
-	abbr gp git push
-    abbr gpo git push origin @
-	abbr gst git stash
-	abbr gres git restore
-    ## Rebase
-    abbr gr git rebase
-    abbr gri git rebase -i
-    abbr grc git rebase --continue
-
-	# Docker
-	abbr dc docker compose
-	abbr dcu docker compose up -d
-	abbr dcd docker compose down
-	abbr dcl docker compose logs
-	abbr dcp docker compose ps
-	abbr dcr docker compose run
-
-    # Tmux
-    abbr tn tmux new-session
-    abbr tl tmux ls
-    abbr ta tmux attach
 end
+
+
+# Load OS-specific configurations
+source ~/.config/fish/wsl.fish
+source ~/.config/fish/macos.fish
