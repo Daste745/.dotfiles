@@ -27,22 +27,35 @@ function last_history_item
 end
 
 
-function activate_rtx
-    # rtx activate takes a few ms, so cache its output to save some time.
-    if not test -e ~/.cache/rtx/activate.fish
-        rtx activate --status fish > ~/.cache/rtx/activate.fish
+function activate_mise
+    # TODO)) Remove this once rtx is replaced by mise on all machines
+    if which mise > /dev/null
+        set -f MISE_CMD mise
     end
-    source ~/.cache/rtx/activate.fish
+    if which rtx > /dev/null
+        set -f MISE_CMD rtx
+    end
+
+    if test -z "$MISE_CMD"
+        echo "[dotfiles] mise or rtx not found, skipping activation"
+        return
+    end
+
+    # `mise activate` takes a few ms, so cache its output to save some time.
+    if not test -e ~/.cache/mise/activate.fish
+        $MISE_CMD activate --status fish > ~/.cache/mise/activate.fish
+    end
+    source ~/.cache/mise/activate.fish
 end
 
 
 if status is-login
-    activate_rtx
+    activate_mise
 end
 
 
 if status is-interactive
-    activate_rtx
+    activate_mise
     zoxide init fish | source
 
     # Misc. aliases
