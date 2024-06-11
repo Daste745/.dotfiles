@@ -41,11 +41,14 @@ function activate_mise
         return
     end
 
-    # `mise activate` takes a few ms, so cache its output to save some time.
-    if not test -e ~/.cache/mise/activate.fish
-        $MISE_CMD activate --status fish > ~/.cache/mise/activate.fish
+    # `mise activate` takes a few ms, so cache its output to save some time
+    set -f MISE_CACHE_DIR ~/.cache/mise
+    set -f MISE_CACHE_FILE "$MISE_CACHE_DIR/activate.fish"
+    if not test -e "$MISE_CACHE_FILE"
+        mkdir -p "$MISE_CACHE_DIR"
+        $MISE_CMD activate --status fish > "$MISE_CACHE_FILE"
     end
-    source ~/.cache/mise/activate.fish
+    source "$MISE_CACHE_FILE"
 end
 
 
