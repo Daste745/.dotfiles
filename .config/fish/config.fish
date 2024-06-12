@@ -28,13 +28,10 @@ function activate_mise
 end
 
 
-if status is-login
+if status is-interactive
     activate_mise
     zoxide init fish | source
-end
 
-
-if status is-interactive
     source ~/.config/fish/aliases.fish
 
     # Edit the command buffer in $EDITOR with Ctrl+X
