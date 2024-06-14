@@ -5,10 +5,10 @@ set -x GOPATH ~/.local/go
 
 function activate_mise
     # TODO)) Remove this once rtx is replaced by mise on all machines
-    if which mise > /dev/null
+    if which mise &> /dev/null
         set -f MISE_CMD mise
     end
-    if which rtx > /dev/null
+    if which rtx &> /dev/null
         set -f MISE_CMD rtx
     end
 
