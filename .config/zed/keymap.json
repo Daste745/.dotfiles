@@ -1,0 +1,40 @@
+[
+  {
+    "bindings": {
+      "ctrl-shift-r": "projects::OpenRecent"
+    }
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-f": "buffer_search::Deploy", // vim default: page down
+      "ctrl-o": "workspace::Open", // vim default: go back
+      "ctrl-b": "project_panel::ToggleFocus",
+      "ctrl-{": "editor::Fold",
+      "ctrl-}": "editor::UnfoldLines"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space i": "editor::Hover",
+      "space .": "editor::ToggleCodeActions",
+      "space B": "editor::ToggleGitBlame",
+      "space r s": "editor::Rename"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == insert || vim_mode == normal)",
+    "bindings": {
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrev"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      // Close terminal when toggling out of it
+      "ctrl-`": "workspace::ToggleBottomDock"
+    }
+  }
+]
