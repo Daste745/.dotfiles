@@ -1,17 +1,32 @@
 [
   {
     "bindings": {
-      "ctrl-shift-r": "projects::OpenRecent"
+      "ctrl-shift-r": "projects::OpenRecent",
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrev"
     }
   },
   {
     "context": "Editor && !menu",
     "bindings": {
-      "ctrl-f": "buffer_search::Deploy", // vim default: page down
-      "ctrl-o": "workspace::Open", // vim default: go back
+      "ctrl-f": "buffer_search::Deploy",
       "ctrl-b": "project_panel::ToggleFocus",
       "ctrl-{": "editor::Fold",
       "ctrl-}": "editor::UnfoldLines"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-1": ["workspace::ActivatePane", 0],
+      "ctrl-2": ["workspace::ActivatePane", 1],
+      "ctrl-3": ["workspace::ActivatePane", 2],
+      "ctrl-4": ["workspace::ActivatePane", 3],
+      "ctrl-5": ["workspace::ActivatePane", 4],
+      "ctrl-6": ["workspace::ActivatePane", 5],
+      "ctrl-7": ["workspace::ActivatePane", 6],
+      "ctrl-8": ["workspace::ActivatePane", 7],
+      "ctrl-9": ["workspace::ActivatePane", 8]
     }
   },
   {
@@ -21,6 +36,8 @@
       "space .": "editor::ToggleCodeActions",
       "space B": "editor::ToggleGitBlame",
       "space r s": "editor::Rename"
+      // "space h": ["workspace::ActivatePaneInDirection", "Left"],
+      // "space l": ["workspace::ActivatePaneInDirection", "Right"]
     }
   },
   {
