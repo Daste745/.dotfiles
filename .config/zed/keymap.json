@@ -12,9 +12,7 @@
       "ctrl-f": "buffer_search::Deploy",
       "ctrl-b": "project_panel::ToggleFocus",
       "ctrl-{": "editor::Fold",
-      "ctrl-}": "editor::UnfoldLines",
-      "g r": "editor::FindAllReferences",
-      "g t": "editor::GoToTypeDefinition"
+      "ctrl-}": "editor::UnfoldLines"
     }
   },
   {
@@ -37,7 +35,9 @@
       "space i": "editor::Hover",
       "space .": "editor::ToggleCodeActions",
       "space B": "editor::ToggleGitBlame",
-      "space r s": "editor::Rename"
+      "g r": "editor::FindAllReferences",
+      "g t": "editor::GoToTypeDefinition"
+      // "space r s": "editor::Rename"   // use c d
       // "space h": ["workspace::ActivatePaneInDirection", "Left"],
       // "space l": ["workspace::ActivatePaneInDirection", "Right"]
     }
