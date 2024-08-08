@@ -49,9 +49,6 @@
       "delay_ms": 500
     }
   },
-  "file_types": {
-    "TSX": ["TypeScript"]
-  },
   "languages": {
     "Python": {
       "format_on_save": [
@@ -78,6 +75,13 @@
       }
     },
     "TypeScript": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "TSX": {
       "formatter": {
         "code_actions": {
           "source.fixAll.eslint": true
