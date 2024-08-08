@@ -49,6 +49,17 @@
       "delay_ms": 500
     }
   },
+  "terminal": {
+    "line_height": "standard",
+    "env": {
+      "GIT_EDITOR": "zeditor --wait"
+    },
+    "detect_venv": {
+      "on": {
+        "activate_script": "fish"
+      }
+    }
+  },
   "languages": {
     "Python": {
       "format_on_save": [
