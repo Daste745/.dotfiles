@@ -37,6 +37,9 @@
   "scrollbar": {
     "show": "never"
   },
+  "project_panel": {
+    "indent_size": 10
+  },
   "vertical_scroll_margin": 5,
   "vim_mode": true,
   "vim": {
