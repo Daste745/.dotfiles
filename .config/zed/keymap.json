@@ -12,7 +12,9 @@
       "ctrl-f": "buffer_search::Deploy",
       "ctrl-b": "project_panel::ToggleFocus",
       "ctrl-{": "editor::Fold",
-      "ctrl-}": "editor::UnfoldLines"
+      "ctrl-}": "editor::UnfoldLines",
+      "ctrl-\\": "pane::SplitRight",
+      "ctrl-|": "pane::SplitDown"
     }
   },
   {
@@ -32,6 +34,7 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "space space": "pane::TogglePreviewTab",
       "space i": "editor::Hover",
       "space .": "editor::ToggleCodeActions",
       "space B": "editor::ToggleGitBlame",
