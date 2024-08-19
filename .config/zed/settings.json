@@ -101,6 +101,10 @@
           "source.fixAll.eslint": true
         }
       }
+    },
+    "Git Commit": {
+      "show_wrap_guides": true,
+      "wrap_guides": [72]
     }
   },
   "lsp": {
