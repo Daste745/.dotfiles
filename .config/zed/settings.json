@@ -41,6 +41,20 @@
     "indent_size": 10
   },
   "vertical_scroll_margin": 5,
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/__pycache__",
+    "**/.ruff_cache",
+    "**/.mypy_cache",
+    "**/.pytest_cache"
+  ],
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "always",
