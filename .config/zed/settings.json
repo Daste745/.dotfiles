@@ -81,6 +81,11 @@
     "Python": {
       "format_on_save": [
         {
+          "code_actions": {
+            "source.fixAll.ruff": true
+          }
+        },
+        {
           "external": {
             "command": "./venv/bin/python",
             "arguments": ["-m", "isort", "-"]
