@@ -81,6 +81,8 @@
   },
   "languages": {
     "Python": {
+      "show_wrap_guides": true,
+      "wrap_guides": [100],
       "format_on_save": [
         {
           "code_actions": {
