@@ -18,7 +18,7 @@
     excludeFiles = ~/.gitignore_global
 
 [init]
-	defaultBranch = master
+	defaultBranch = main
 
 [pull]
     ff = only
