@@ -20,6 +20,7 @@
     "light": "Ayu Light",
     "dark": "Ayu Mirage"
   },
+  "use_system_path_prompts": false,
   "tab_bar": {
     "show_nav_history_buttons": false
   },
