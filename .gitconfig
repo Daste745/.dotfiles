@@ -14,6 +14,9 @@
 	path = ~/.user.gitconfig
 
 
+[core]
+    excludeFiles = ~/.gitignore_global
+
 [init]
 	defaultBranch = master
 
