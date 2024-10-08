@@ -30,3 +30,5 @@ Components:
   - tmux
   - vim
   - mise
+- Add some background job to check if the dotfiles are up to date
+- Add configuration for servers
