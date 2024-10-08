@@ -8,7 +8,7 @@ end
 abbr !! --position anywhere --function last_history_item
 abbr md mkdir
 abbr takeown sudo chown -v $(whoami):$(whoami)
-abbr e xdg-open .
+abbr e open .
 ## Shortcut to the dotfiles directory
 abbr dots z ~/.dotfiles
 
