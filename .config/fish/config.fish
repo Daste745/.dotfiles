@@ -40,5 +40,9 @@ end
 
 
 # Load OS-specific configurations
-source ~/.config/fish/wsl.fish
-source ~/.config/fish/macos.fish
+if test -n "$WSL_DISTRO_NAME"
+    source ~/.config/fish/wsl.fish
+end
+if test "$(uname)" = "Darwin"
+    source ~/.config/fish/macos.fish
+end
