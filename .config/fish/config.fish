@@ -33,9 +33,6 @@ if status is-interactive
     zoxide init fish | source
 
     source ~/.config/fish/aliases.fish
-
-    # Edit the command buffer in $EDITOR with Ctrl+X
-    bind --mode insert \cX 'edit_command_buffer'
 end
 
 
