@@ -3,7 +3,7 @@ set -x EDITOR vim
 set -x GOPATH ~/.local/go
 
 
-function activate_mise
+function __activate_mise
     # TODO)) Remove this once rtx is replaced by mise on all machines
     if which mise &> /dev/null
         set -f MISE_CMD mise
@@ -29,7 +29,7 @@ end
 
 
 if status is-interactive
-    activate_mise
+    __activate_mise
     zoxide init fish | source
 
     source ~/.config/fish/aliases.fish

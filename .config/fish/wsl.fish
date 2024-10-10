@@ -1,5 +1,5 @@
 # Create an ssh auth sock tunnel with Windows' OpenSSH
-function create_ssh_socket
+function __create_ssh_socket
     if not test -x "$(which socat 2>/dev/null)"
         return
     end
@@ -12,5 +12,5 @@ end
 
 
 if status is-login
-    create_ssh_socket
+    __create_ssh_socket
 end

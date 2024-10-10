@@ -1,4 +1,4 @@
-function activate_brew
+function __activate_brew
     set -f homebrew_cache_dir ~/.cache/brew
     set -f homebrew_cache_file "$homebrew_cache_dir/activate.fish"
     if not test -e "$homebrew_cache_file"
@@ -11,6 +11,6 @@ end
 
 if status is-login
     if test -x /opt/homebrew/bin/brew
-        activate_brew
+        __activate_brew
     end
 end
