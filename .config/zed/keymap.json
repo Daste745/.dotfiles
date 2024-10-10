@@ -35,15 +35,10 @@
     "context": "Editor && vim_mode == normal",
     "bindings": {
       "space space": "pane::TogglePreviewTab",
-      "space i": "editor::Hover",
-      "space .": "editor::ToggleCodeActions",
       "space B": "editor::ToggleGitBlame",
       "space c": "workspace::ToggleCenteredLayout",
       "g r": "editor::FindAllReferences",
       "g t": "editor::GoToTypeDefinition"
-      // "space r s": "editor::Rename"   // use c d
-      // "space h": ["workspace::ActivatePaneInDirection", "Left"],
-      // "space l": ["workspace::ActivatePaneInDirection", "Right"]
     }
   },
   {
