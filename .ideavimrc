@@ -8,7 +8,6 @@ set surround
 " inoremap <C-k> <action>(PopupMenu-selectPrev)
 
 " UI actions
-map <C-p> <action>(SearchEverywhere)
 map gh <action>(ShowHoverInfo)
 map g. <action>(ShowIntentionActions)
 
