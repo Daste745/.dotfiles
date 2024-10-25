@@ -53,6 +53,7 @@ abbr dcd docker compose down
 abbr dcl docker compose logs
 abbr dcp docker compose ps
 abbr dcr docker compose run
+abbr dcw docker compose watch
 
 # Tmux
 abbr tn tmux new-session
