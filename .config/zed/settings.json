@@ -80,6 +80,22 @@
       }
     }
   },
+  "auto_install_extensions": {
+    "docker-compose": true,
+    "dockerfile": true,
+    "emmet": true,
+    "fish": true,
+    "git-firefly": true,
+    "gleam": true,
+    "html": true,
+    "log": true,
+    "make": true,
+    "ruff": true,
+    "scss": true,
+    "sql": true,
+    "toml": true,
+    "wakatime": true
+  },
   "languages": {
     "Python": {
       "show_wrap_guides": true,
