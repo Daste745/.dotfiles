@@ -38,6 +38,7 @@ abbr gst git stash
 abbr gres git restore
 abbr ga git add
 abbr gap git add --patch
+abbr grp git restore --patch
 abbr gd git diff
 abbr gdc git diff --cached
 abbr gp git push
