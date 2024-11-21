@@ -1,7 +1,6 @@
 [
   {
     "bindings": {
-      "ctrl-shift-r": "projects::OpenRecent",
       "ctrl-j": "menu::SelectNext",
       "ctrl-k": "menu::SelectPrev"
     }
@@ -27,6 +26,7 @@
   {
     "context": "Workspace",
     "bindings": {
+      "ctrl-shift-r": "projects::OpenRecent",
       "ctrl-1": ["workspace::ActivatePane", 0],
       "ctrl-2": ["workspace::ActivatePane", 1],
       "ctrl-3": ["workspace::ActivatePane", 2],
