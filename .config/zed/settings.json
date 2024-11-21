@@ -42,6 +42,7 @@
     "indent_size": 10
   },
   "vertical_scroll_margin": 5,
+  "use_smartcase_search": true,
   "file_scan_exclusions": [
     "**/.git",
     "**/.svn",
