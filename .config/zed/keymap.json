@@ -1,9 +1,17 @@
 [
   {
+    "context": "VimControl",
     "bindings": {
       "ctrl-shift-r": "projects::OpenRecent",
       "ctrl-j": "menu::SelectNext",
       "ctrl-k": "menu::SelectPrev"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-shift-j": "editor::ExpandExcerptsDown",
+      "ctrl-shift-k": "editor::ExpandExcerptsUp"
     }
   },
   {
