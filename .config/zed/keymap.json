@@ -1,6 +1,5 @@
 [
   {
-    "context": "VimControl",
     "bindings": {
       "ctrl-shift-r": "projects::OpenRecent",
       "ctrl-j": "menu::SelectNext",
