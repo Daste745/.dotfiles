@@ -24,3 +24,6 @@ Makefile
 install
 
 tmux/plugins
+
+# Remove this
+test_secret_file
