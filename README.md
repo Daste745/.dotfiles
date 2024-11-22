@@ -31,7 +31,9 @@ Components:
 
 1. Add the file as an entry in `.gitattributes` using `filter=git-crypt diff=git-crypt`
 2. Add `.gitattributes` to git
-3. Follow steps 2-3 from [Adding New Files](#adding-new-files)
+3. Copy the file with its full directory into `~/.dotfiles`
+4. Make sure the file was encrypted: `git crypt status`
+5. Run `make adopt` - this should symlink the file to the correct location
 
 ## TODO
 
