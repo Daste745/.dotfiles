@@ -161,6 +161,22 @@
           "typeCheckingMode": "standard"
         }
       }
+    },
+    "pylsp": {
+      "settings": {
+        "plugins": {
+          "pylsp_mypy": {
+            "enabled": true,
+            "dmypy": true, // Disables live_mode
+            "report_progress": true,
+            "overrides": ["--python-executable", ".venv/bin/python", true]
+          },
+          "pycodestyle": { "enabled": false },
+          "pylint": { "enabled": false },
+          "pyflakes": { "enabled": false },
+          "flake8": { "enabled": false }
+        }
+      }
     }
   }
 }
