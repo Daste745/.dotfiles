@@ -1,5 +1,3 @@
-test_secret_file filter=git-crypt diff=git-crypt
-
 # Make sure to not encrypt this file :^)
 .gitattributes !filter !diff
 
