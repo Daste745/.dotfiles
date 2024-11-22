@@ -15,8 +15,8 @@ Components:
 ## Installing Dotfiles On a Clean System
 
 Required packages:
-- [git-crypt](https://www.agwa.name/projects/git-crypt/)
-- [GNU stow](https://www.gnu.org/software/stow/)
+- [git-crypt](https://www.agwa.name/projects/git-crypt/) - decrypting secret files
+- [GNU stow](https://www.gnu.org/software/stow/) - symlinking dotfiles to $HOME
 - [make](https://www.gnu.org/software/make/) (not neccesarily needed, but nice to have)
 
 1. Clone the repo to a directory in `$HOME`, e.g. `~/.dotfiles`
@@ -26,7 +26,7 @@ Required packages:
 
 ## Adding New Files
 
-1. Copy the file with its full directory into `~/.dotfiles`
+1. Copy the file with its full directory structure into `~/.dotfiles`
 2. Run `make adopt` - this should symlink the file to the correct location
 3. Add the file to git
 
@@ -34,8 +34,8 @@ Required packages:
 
 1. Add the file as an entry in `.gitattributes` using `filter=git-crypt diff=git-crypt`
 2. Add `.gitattributes` to git
-3. Copy the file with its full directory into `~/.dotfiles`
-4. Make sure the file was encrypted: `git crypt status`
+3. Copy the file with its full directory structure into `~/.dotfiles`
+4. Make sure the file was encrypted: `git crypt status` (should be listed as "encrypted")
 5. Run `make adopt` - this should symlink the file to the correct location
 
 ## TODO
