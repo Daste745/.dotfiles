@@ -30,7 +30,7 @@ Required packages:
 2. Run `make adopt` - this should symlink the file to the correct location
 3. Add the file to git
 
-## Adding New **Encrypted** Files
+## Adding New Encrypted Files
 
 1. Add the file as an entry in `.gitattributes` using `filter=git-crypt diff=git-crypt`
 2. Add `.gitattributes` to git
