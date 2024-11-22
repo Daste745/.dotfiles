@@ -158,7 +158,7 @@
           "pythonPath": ".venv/bin/python"
         },
         "python.analysis": {
-          "typeCheckingMode": "standard"
+          "typeCheckingMode": "off" // Don't typecheck with pyright
         }
       }
     },
