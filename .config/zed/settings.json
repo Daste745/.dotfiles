@@ -109,14 +109,14 @@
         },
         {
           "external": {
-            "command": "./venv/bin/python",
+            "command": ".venv/bin/python",
             "arguments": ["-m", "isort", "-"]
           }
         },
         {
           // https://github.com/zed-industries/zed/discussions/6597
           "external": {
-            "command": "./venv/bin/python",
+            "command": ".venv/bin/python",
             "arguments": ["-m", "black", "-", "--fast"]
           }
         }
@@ -155,7 +155,7 @@
     "pyright": {
       "settings": {
         "python": {
-          "pythonPath": "./venv/bin/python"
+          "pythonPath": ".venv/bin/python"
         },
         "python.analysis": {
           "typeCheckingMode": "standard"
