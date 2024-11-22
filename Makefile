@@ -1,4 +1,4 @@
-STOW=stow -vv
+STOW=stow -v 2
 
 .PHONY: stow adopt
 
