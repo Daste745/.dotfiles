@@ -24,11 +24,14 @@ Components:
 
 ## TODO
 
+- Make it easier and faster to boostrap dotfiles on a new system
 - Add a script to install all the necessary packages for a new system
   - GNU stow
   - fish shell
   - tmux
   - vim
   - mise
+  - ...
+- Store secrets
 - Add some background job to check if the dotfiles are up to date
 - Add configuration for servers
