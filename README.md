@@ -14,12 +14,15 @@ Components:
 
 ## Installing Dotfiles On a Clean System
 
-1. Install [GNU stow](https://www.gnu.org/software/stow/)
-2. Clone the repo to a directory in `$HOME`, e.g. `~/.dotfiles`
-3. Change directory into the repository: `cd .dotfiles`
-4. Install [git-crypt](https://www.agwa.name/projects/git-crypt/)
-5. Decrypt files: `git-crypt unlock /path/to/key`
-6. Create symlinks to all config files: `make stow`
+Required packages:
+- [git-crypt](https://www.agwa.name/projects/git-crypt/)
+- [GNU stow](https://www.gnu.org/software/stow/)
+- [make](https://www.gnu.org/software/make/) (not neccesarily needed, but nice to have)
+
+1. Clone the repo to a directory in `$HOME`, e.g. `~/.dotfiles`
+2. Change directory into the repository: `cd .dotfiles`
+3. Decrypt files: `git-crypt unlock /path/to/key`
+4. Create symlinks to all config files: `make stow`
 
 ## Adding New Files
 
