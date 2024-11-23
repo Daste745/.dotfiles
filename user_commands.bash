@@ -22,7 +22,7 @@ _postInstall() {
         postgresql-libs python-libtmux
 
     # Graphical apps
-    pacman -S --noconfirm --needed alacritty gimp libreoffice-fresh zed code obsidian bitwarden nextcloud-client
+    pacman -S --noconfirm --needed alacritty gimp libreoffice-fresh zed code thunderbird obsidian bitwarden nextcloud-client
 
     # Docker
     pacman -S --noconfirm --needed docker docker-buildx docker-compose 
