@@ -29,6 +29,7 @@ _postInstall() {
         && cd .dotfiles \
         && ./install'
     # TODO)) Decrypt encrypted files
+    chsh -s /usr/bin/fish "$user"
 }
 
 case "$1" in
