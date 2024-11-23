@@ -9,11 +9,10 @@ _postInstall() {
 
     echo "Doing post-install setup for $user ($home)"
 
-    local -r config="$home/.config"
     local -r applications="$home/.local/share/applications"
 
-    mkdir -pv "$config" "$applications"
-    chown -Rv "$user:$user" "$config" "$applications"
+    mkdir -pv "$home/.config" "$applications"
+    chown -Rv "$user:$user" "$home/.config" "$home/.local"
 
     # Common packages
     pacman -Sy
@@ -36,8 +35,8 @@ _postInstall() {
     su --login "$user" -c " \
         wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-start.desktop -O $applications/syncthing-start.desktop && \
         wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-ui.desktop -O $applications/syncthing-ui.desktop && \
-        mkdir -pv $config/autostart && \
-        cp -v $applications/syncthing-start.desktop $config/autostart"
+        mkdir -pv $home/.config/autostart && \
+        cp -v $applications/syncthing-start.desktop $home/.config/autostart"
 
     # Dotfiles
     rm -rfv "$home/.config/fish"  # Remove default fish config directory to avoid conflicts with .dotfiles
@@ -53,7 +52,7 @@ _postInstall() {
     # mise
     # https://mise.jdx.dev/installing-mise.html#https-mise-run
     su --login "$user" -c " \
-        curl https://mise.run | sh \
+        curl https://mise.run | MISE_QUIET=1 sh \
         && fish_add_path $home/.local/bin"
 }
 
