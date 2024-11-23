@@ -23,11 +23,12 @@ _postInstall() {
     systemctl enable docker.service
 
     # Dotfiles
-    git clone https://github.com/Daste745/.dotfiles.git "$home/.dotfiles"
-    chown -R "$user:$user" "$home/.dotfiles"
-    # TODO)) Install dotfiles:
-    # - Decrypt secrets
-    # - make stow
+    rm -rv "$home/.config/fish"  # Remove default fish config directory to avoid conflicts with .dotfiles
+    su --login "$user" -c ' \
+        git clone https://github.com/Daste745/.dotfiles.git .dotfiles \
+        && cd .dotfiles \
+        && ./install'
+    # TODO)) Decrypt encrypted files
 }
 
 case "$1" in
