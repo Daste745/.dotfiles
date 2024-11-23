@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -exu
 set -o pipefail
 
 _postInstall() {
@@ -12,16 +12,24 @@ _postInstall() {
     pacman -Sy
     pacman -S --noconfirm --needed \
         fish git git-crypt vim make stow tmux htop wget zip unzip grep \
-        fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust croc \
+        fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust croc tailscale syncthing \
         postgresql-libs python-libtmux
 
     # Graphical apps
-    pacman -S --noconfirm --needed alacritty gimp libreoffice-fresh zed code obsidian bitwarden
+    pacman -S --noconfirm --needed alacritty gimp libreoffice-fresh zed code obsidian bitwarden nextcloud-client
 
     # Docker
     pacman -S --noconfirm --needed docker docker-buildx docker-compose 
     usermod -aG docker "$user"
     systemctl enable docker.service
+
+    # Syncthing
+    # https://github.com/syncthing/syncthing/tree/main/etc/linux-desktop
+    local -r applications="$home/.local/share/applications"
+    mkdir -p "$applications"
+    wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-start.desktop "$applications/syncthing-start.desktop"
+    wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-ui.desktop "$applications/syncthing-ui.desktop"
+    chown -R "$user:$user" "$home/.local/share/applications"
 
     # Dotfiles
     rm -rfv "$home/.config/fish"  # Remove default fish config directory to avoid conflicts with .dotfiles
@@ -32,7 +40,9 @@ _postInstall() {
     # TODO)) Decrypt encrypted files
 
     chsh -s /usr/bin/fish "$user"
-    # Install mise
+
+    # mise
+    # https://mise.jdx.dev/installing-mise.html#https-mise-run
     su --login "$user" -c " \
         curl https://mise.run | sh \
         && fish_add_path $home/.local/bin"
