@@ -24,5 +24,6 @@ _darcs
 ^/COPYING
 Makefile
 install
+user_commands.bash  # EndeavourOS post-install script
 
 tmux/plugins
