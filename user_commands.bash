@@ -18,7 +18,7 @@ _postInstall() {
     pacman -Sy
     pacman -S --noconfirm --needed \
         fish git git-crypt vim make stow tmux htop wget zip unzip grep \
-        fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust croc tailscale \
+        fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust croc \
         postgresql-libs python-libtmux
 
     # Graphical apps
@@ -28,6 +28,10 @@ _postInstall() {
     pacman -S --noconfirm --needed docker docker-buildx docker-compose 
     usermod -aG docker "$user"
     systemctl enable docker.service
+
+    # Tailscale
+    pacman -S --noconfirm --needed tailscale
+    systemctl enable tailscaled.service
 
     # Syncthing
     # https://github.com/syncthing/syncthing/tree/main/etc/linux-desktop
