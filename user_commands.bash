@@ -11,11 +11,12 @@ _postInstall() {
 
     pacman -Sy
     pacman -S --noconfirm --needed \
-        fish git git-crypt vim make stow tmux htop wget zip unzip \
-        fastfetch gnu-netcat tree httpie jq fzf zoxide hyperfine difftastic grep ripgrep tokei dust
+        fish git git-crypt vim make stow tmux htop wget zip unzip grep \
+        fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust \
+        postgresql-libs python-libtmux
 
     # Graphical apps
-    pacman -S --noconfirm --needed alacritty gimp libreoffice-fresh
+    pacman -S --noconfirm --needed alacritty gimp libreoffice-fresh zed code obsidian bitwarden
 
     # Docker
     pacman -S --noconfirm --needed docker docker-buildx docker-compose 
