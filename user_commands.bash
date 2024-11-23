@@ -29,7 +29,12 @@ _postInstall() {
         && cd .dotfiles \
         && ./install'
     # TODO)) Decrypt encrypted files
+
     chsh -s /usr/bin/fish "$user"
+    # Install mise
+    su --login "$user" -c " \
+        curl https://mise.run | sh \
+        && fish_add_path $home/.local/bin"
 }
 
 case "$1" in
