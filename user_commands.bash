@@ -27,8 +27,8 @@ _postInstall() {
     # https://github.com/syncthing/syncthing/tree/main/etc/linux-desktop
     local -r applications="$home/.local/share/applications"
     mkdir -p "$applications"
-    wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-start.desktop "$applications/syncthing-start.desktop"
-    wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-ui.desktop "$applications/syncthing-ui.desktop"
+    wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-start.desktop -O "$applications/syncthing-start.desktop"
+    wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-ui.desktop -O "$applications/syncthing-ui.desktop"
     chown -R "$user:$user" "$home/.local/share/applications"
     mkdir -p "$home/.config/autostart"
     cp "$applications/syncthing-start.desktop" "$home/.config/autostart"
