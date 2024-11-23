@@ -10,7 +10,9 @@ _postInstall() {
     echo "Doing post-install setup for $user ($home)"
 
     pacman -Sy
-    pacman -S --noconfirm --needed fish fzf vim git git-crypt make stow tmux htop wget zip unzip fastfetch gnu-netcat tree httpie jq
+    pacman -S --noconfirm --needed \
+        fish git git-crypt vim make stow tmux htop wget zip unzip \
+        fastfetch gnu-netcat tree httpie jq fzf zoxide hyperfine difftastic grep ripgrep tokei dust
 
     # Graphical apps
     pacman -S --noconfirm --needed alacritty gimp libreoffice-fresh
