@@ -9,10 +9,17 @@ _postInstall() {
 
     echo "Doing post-install setup for $user ($home)"
 
+    local -r config="$home/.config"
+    local -r applications="$home/.local/share/applications"
+
+    mkdir -pv "$config" "$applications"
+    chown -Rv "$user:$user" "$config" "$applications"
+
+    # Common packages
     pacman -Sy
     pacman -S --noconfirm --needed \
         fish git git-crypt vim make stow tmux htop wget zip unzip grep \
-        fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust croc tailscale syncthing \
+        fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust croc tailscale \
         postgresql-libs python-libtmux
 
     # Graphical apps
@@ -25,14 +32,12 @@ _postInstall() {
 
     # Syncthing
     # https://github.com/syncthing/syncthing/tree/main/etc/linux-desktop
-    local -r applications="$home/.local/share/applications"
-    mkdir -p "$applications"
-    wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-start.desktop -O "$applications/syncthing-start.desktop"
-    wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-ui.desktop -O "$applications/syncthing-ui.desktop"
-    chown -R "$user:$user" "$home/.local/share/applications"
-    mkdir -p "$home/.config/autostart"
-    cp "$applications/syncthing-start.desktop" "$home/.config/autostart"
-    chown -R "$user:$user" "$home/.config/autostart"
+    pacman -S --noconfirm --needed syncthing
+    su --login "$user" -c " \
+        wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-start.desktop -O $applications/syncthing-start.desktop && \
+        wget https://raw.githubusercontent.com/syncthing/syncthing/refs/heads/main/etc/linux-desktop/syncthing-ui.desktop -O $applications/syncthing-ui.desktop && \
+        mkdir -pv $config/autostart && \
+        cp -v $applications/syncthing-start.desktop $config/autostart"
 
     # Dotfiles
     rm -rfv "$home/.config/fish"  # Remove default fish config directory to avoid conflicts with .dotfiles
@@ -42,6 +47,7 @@ _postInstall() {
         && ./install'
     # TODO)) Decrypt encrypted files
 
+    # Set fish as the login shell - everything after this runs under fish
     chsh -s /usr/bin/fish "$user"
 
     # mise
