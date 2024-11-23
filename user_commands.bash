@@ -23,7 +23,7 @@ _postInstall() {
     systemctl enable docker.service
 
     # Dotfiles
-    rm -rv "$home/.config/fish"  # Remove default fish config directory to avoid conflicts with .dotfiles
+    rm -rfv "$home/.config/fish"  # Remove default fish config directory to avoid conflicts with .dotfiles
     su --login "$user" -c ' \
         git clone https://github.com/Daste745/.dotfiles.git .dotfiles \
         && cd .dotfiles \
