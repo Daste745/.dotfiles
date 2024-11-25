@@ -18,8 +18,8 @@ _postInstall() {
     pacman -Sy
     pacman -S --noconfirm --needed \
         fish git git-crypt vim make stow tmux htop wget zip unzip grep \
-        fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust croc \
-        postgresql-libs python-libtmux
+        fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust croc tailscale \
+        postgresql-libs python-libtmux clang cmake ninja
 
     # Graphical apps
     pacman -S --noconfirm --needed alacritty gimp libreoffice-fresh zed code thunderbird obsidian bitwarden nextcloud-client
