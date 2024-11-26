@@ -31,21 +31,31 @@ abbr rmdir rmdir -v
 abbr chmod chmod -v
 
 # Git
+## Common
 abbr gs git status
 abbr gc git commit
+abbr gca git commit --amend
 abbr gl git lg
 abbr gst git stash
-abbr gres git restore
+## add
 abbr ga git add
 abbr gap git add --patch
+## restore
+abbr gres git restore
 abbr grp git restore --patch
-abbr gd git diff
-abbr gdc git diff --cached
+## push
 abbr gp git push
 abbr gpo git push origin @
+## rebase
 abbr gr git rebase
 abbr gri git rebase -i
 abbr grc git rebase --continue
+abbr gra git rebase --abort
+## diff
+abbr gd git diff
+abbr gdc git diff --cached
+abbr gbs git branch-summary
+abbr gbd git branch-diff
 
 # Docker
 abbr dc docker compose
