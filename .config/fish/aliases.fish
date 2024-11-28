@@ -56,6 +56,7 @@ abbr gd git diff
 abbr gdc git diff --cached
 abbr gbs git branch-summary
 abbr gbd git branch-diff
+abbr gbm git branch-migrations
 
 # Docker
 abbr dc docker compose

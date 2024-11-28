@@ -32,3 +32,5 @@
     # FIXME: Diff against the nearest parent, not `dev`
     branch-summary = "!f() { git diff --compact-summary $(git merge-base ${1:-dev} @) @; }; f"
     branch-diff = "!f() { git diff $(git merge-base ${1:-dev} @) @; }; f"
+    # branch-summary, but grepped for `migrations` - useful for Django
+    branch-migrations = "!f() { git diff --name-only $(git merge-base ${1:-dev} @) @ | grep migrations; }; f"
