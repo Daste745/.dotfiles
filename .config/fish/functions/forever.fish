@@ -20,5 +20,6 @@ function forever
             $verbose && echo "[forever] Received SIGINT, exiting..."
             break
         end
+        sleep 0.1s
     end
 end
