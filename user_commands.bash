@@ -17,7 +17,7 @@ _postInstall() {
     # Common packages
     pacman -Sy
     pacman -S --noconfirm --needed \
-        fish git git-crypt vim make stow tmux htop wget zip unzip grep \
+        fish git git-crypt vim make stow tmux htop wget zip unzip grep wl-clipboard \
         fastfetch gnu-netcat tree httpie jq fzf wakatime zoxide hyperfine difftastic ripgrep tokei dust croc tailscale \
         postgresql-libs python-libtmux clang cmake ninja
 
