@@ -95,7 +95,8 @@
     "scss": true,
     "sql": true,
     "toml": true,
-    "wakatime": true
+    "wakatime": true,
+    "zig": true
   },
   "languages": {
     "Python": {
