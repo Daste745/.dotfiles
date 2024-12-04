@@ -43,6 +43,9 @@ abbr gap git add --patch
 ## restore
 abbr gres git restore
 abbr grp git restore --patch
+abbr grs git restore --staged
+abbr grps git restore --patch --staged
+abbr grsp git restore --patch --staged
 ## push
 abbr gp git push
 abbr gpo git push origin @
