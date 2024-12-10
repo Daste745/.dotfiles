@@ -35,6 +35,7 @@ abbr chmod chmod -v
 abbr gs git status
 abbr gc git commit
 abbr gca git commit --amend
+abbr gco git checkout
 abbr gl git lg
 abbr gst git stash
 ## add
