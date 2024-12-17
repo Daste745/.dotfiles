@@ -31,6 +31,7 @@ end
 if status is-interactive
     __activate_mise
     zoxide init fish | source
+    direnv hook fish | source
 
     source ~/.config/fish/aliases.fish
 end
