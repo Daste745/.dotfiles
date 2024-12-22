@@ -147,6 +147,12 @@
     "Rust": {
       "format_on_save": "language_server"
     },
+    "Zig": {
+      "format_on_save": "language_server",
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    },
     "Git Commit": {
       "show_wrap_guides": true,
       "wrap_guides": [72]
@@ -177,6 +183,11 @@
           "pyflakes": { "enabled": false },
           "flake8": { "enabled": false }
         }
+      }
+    },
+    "zls": {
+      "initialization_options": {
+        "enable_build_on_save": true
       }
     }
   }
