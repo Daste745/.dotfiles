@@ -3,22 +3,68 @@
 set -eu
 set -o pipefail
 
+# Detect the OS
+if [ $(uname -s) == "Linux" ]; then
+    local -r distro="$(cat /etc/os-release | grep -E '^ID=' | cut -d '=' -f 2)"
+    case "$distro" in
+        "arch" | "manjaro")
+            OS="arch"
+            PACKAGE_MANAGER="pacman"
+            ;;
+        "ubuntu" | "debian")
+            OS="debian"
+            PACKAGE_MANAGER="apt"
+            ;;
+        *)
+            echo "Unsupported linux distro: $distro. Packages won't be installed automatically."
+            ;;
+    esac
+else
+    echo "Unsupported OS: $(uname -s). Packages won't be installed automatically."
+fi
 
+if [ -n "${OS+x}" ]; then
+    echo "Detected OS: $OS"
+    echo "Package manager: $PACKAGE_MANAGER"
+fi
+
+# Ensure ~/.config exists
 CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"
 if [ ! -d "$CONFIG" ]; then
     echo "Creating $CONFIG..."
     mkdir -p "$CONFIG"
 fi
 
-make stow
+# Install required packages if a package manager was detected
+if [ -n "${PACKAGE_MANAGER+x}" ]; then
+    echo "Installing required packages. If prompted by sudo, please enter your password."
+    case "$PACKAGE_MANAGER" in
+        "pacman")
+            sudo pacman -Sy --noconfirm --needed fish git git-crypt stow tmux
+            ;;
+        "apt")
+            sudo apt-get update
+            sudo apt-get install -y fish git git-crypt stow tmux
+            ;;
+        *)
+            echo "Unsupported package manager: $PACKAGE_MANAGER. Packages won't be installed automatically."
+            ;;
+    esac
+fi
 
+# Install dotfiles
+echo "Installing dotfiles..."
+stow -v 2 .
+
+# Install TPM and tmux plugins
 TMUX_DIR="$CONFIG/tmux"
 TPM_DIR="$TMUX_DIR/plugins/tpm"
-
 if [ ! -d "$TPM_DIR" ]; then
     echo "Installing TPM..."
     mkdir -p "$TMUX_DIR/plugins"
     git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+else
+    echo "TPM already installed."
 fi
 echo "Installing TPM plugins..."
 "$TPM_DIR/bin/install_plugins"
