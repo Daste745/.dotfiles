@@ -1,4 +1,4 @@
 [global]
-load_dotenv = true
+load_dotenv = false
 strict_env = true
 hide_env_diff = true
