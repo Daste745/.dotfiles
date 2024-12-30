@@ -153,6 +153,12 @@
         "source.organizeImports": true
       }
     },
+    "C": {
+      "format_on_save": "language_server"
+    },
+    "C++": {
+      "format_on_save": "language_server"
+    },
     "Git Commit": {
       "show_wrap_guides": true,
       "wrap_guides": [72]
