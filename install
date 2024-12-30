@@ -5,8 +5,8 @@ set -o pipefail
 
 # Detect the OS
 if [ $(uname -s) == "Linux" ]; then
-    local -r distro="$(cat /etc/os-release | grep -E '^ID=' | cut -d '=' -f 2)"
-    case "$distro" in
+    DISTRO="$(cat /etc/os-release | grep -E '^ID=' | cut -d '=' -f 2)"
+    case "$DISTRO" in
         "arch" | "manjaro")
             OS="arch"
             PACKAGE_MANAGER="pacman"
