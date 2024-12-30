@@ -56,6 +56,10 @@ fi
 echo "Installing dotfiles..."
 stow -v 2 .
 
+# Set fish as the default shell
+echo "Setting fish as the default shell..."
+sudo chsh -s "$(which fish)" "$USER"
+
 # Install TPM and tmux plugins
 TMUX_DIR="$CONFIG/tmux"
 TPM_DIR="$TMUX_DIR/plugins/tpm"
