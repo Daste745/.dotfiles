@@ -79,6 +79,9 @@
       "on": {
         "activate_script": "fish"
       }
+    },
+    "toolbar": {
+      "breadcrumbs": false
     }
   },
   "auto_install_extensions": {
