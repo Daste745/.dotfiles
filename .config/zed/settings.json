@@ -96,7 +96,8 @@
     "sql": true,
     "toml": true,
     "wakatime": true,
-    "zig": true
+    "zig": true,
+    "xml": true
   },
   "languages": {
     "Python": {
