@@ -33,14 +33,17 @@ abbr chmod chmod -v
 # Git
 ## Common
 abbr gs git status
-abbr gc git commit
-abbr gca git commit --amend
 abbr gco git checkout
 abbr gl git lg
 abbr gst git stash
 ## add
 abbr ga git add
 abbr gap git add --patch
+## commit
+abbr gc git commit
+abbr gca git commit --amend
+abbr gcan git commit --amend --no-edit
+abbr gcna git commit --amend --no-edit
 ## restore
 abbr gres git restore
 abbr grp git restore --patch
