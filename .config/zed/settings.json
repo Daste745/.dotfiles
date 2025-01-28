@@ -41,6 +41,9 @@
   "project_panel": {
     "indent_size": 10
   },
+  "collaboration_panel": {
+    "button": false
+  },
   "vertical_scroll_margin": 5,
   "use_smartcase_search": true,
   "file_scan_exclusions": [
