@@ -5,9 +5,9 @@ set -o pipefail
 
 # Detect the OS
 if [ $(uname -s) == "Linux" ]; then
-    DISTRO="$(cat /etc/os-release | grep -E '^ID=' | cut -d '=' -f 2)"
+    DISTRO="$(cat /etc/os-release | grep -E '^ID=' | cut -d '=' -f 2 | sed 's/"//g')"
     case "$DISTRO" in
-        "arch" | "manjaro")
+        "arch" | "endeavouros" | "manjaro")
             OS="arch"
             PACKAGE_MANAGER="pacman"
             ;;
@@ -16,7 +16,7 @@ if [ $(uname -s) == "Linux" ]; then
             PACKAGE_MANAGER="apt"
             ;;
         *)
-            echo "Unsupported linux distro: $distro. Packages won't be installed automatically."
+            echo "Unsupported linux distro: $DISTRO. Packages won't be installed automatically."
             ;;
     esac
 else
