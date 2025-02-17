@@ -110,6 +110,7 @@
     "Python": {
       "show_wrap_guides": true,
       "wrap_guides": [100],
+      "language_servers": ["!pylsp", "..."],
       "format_on_save": [
         {
           "code_actions": {
@@ -179,7 +180,8 @@
           "pythonPath": ".venv/bin/python"
         },
         "python.analysis": {
-          "typeCheckingMode": "off" // Don't typecheck with pyright
+          "typeCheckingMode": "standard",
+          // "typeCheckingMode": "standard" // Don't typecheck with pyright (when using pylsp)
         }
       }
     },
@@ -188,7 +190,7 @@
         "plugins": {
           "pylsp_mypy": {
             "enabled": true,
-            "dmypy": true, // Disables live_mode
+            "dmypy": false, // Disables live_mode
             "report_progress": true,
             "overrides": ["--python-executable", ".venv/bin/python", true]
           },
