@@ -67,7 +67,7 @@ sudo chsh -s "$(which fish)" "$USER"
 # Install mise
 # https://mise.jdx.dev/installing-mise.html#https-mise-run
 curl https://mise.run | sh
-fish_add_path "$HOME/.local/bin"
+fish -c "fish_add_path $HOME/.local/bin"
 
 # Install TPM and tmux plugins
 TMUX_DIR="$CONFIG/tmux"
