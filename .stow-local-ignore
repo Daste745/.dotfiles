@@ -27,3 +27,5 @@ install
 user_commands.bash  # EndeavourOS post-install script
 
 tmux/plugins
+
+Microsoft.PowerShell_profile.ps1
