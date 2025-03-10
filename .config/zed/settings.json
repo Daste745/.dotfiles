@@ -45,6 +45,16 @@
   "collaboration_panel": {
     "button": false
   },
+  "diagnostics": {
+    "include_warnings": false,
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    }
+  },
   "vertical_scroll_margin": 5,
   "use_smartcase_search": true,
   "file_scan_exclusions": [
@@ -180,7 +190,7 @@
           "pythonPath": ".venv/bin/python"
         },
         "python.analysis": {
-          "typeCheckingMode": "standard",
+          "typeCheckingMode": "standard"
           // "typeCheckingMode": "standard" // Don't typecheck with pyright (when using pylsp)
         }
       }
