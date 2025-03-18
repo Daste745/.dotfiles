@@ -118,6 +118,9 @@
     "zig": true,
     "xml": true
   },
+  "jupyter": {
+    "enabled": false
+  },
   "languages": {
     "Python": {
       "show_wrap_guides": true,
