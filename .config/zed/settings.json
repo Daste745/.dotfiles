@@ -7,7 +7,6 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "icon_theme": "Zed (Default)",
   "ui_font_family": "Maple Mono",
   "ui_font_fallbacks": ["Zed Plex Mono"],
   "ui_font_size": 14,
@@ -23,6 +22,7 @@
     "light": "Ayu Light",
     "dark": "Ayu Mirage"
   },
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "use_system_path_prompts": false,
   "tab_bar": {
     "show_nav_history_buttons": false
@@ -101,12 +101,12 @@
     }
   },
   "auto_install_extensions": {
+    "colored-zed-icons-theme": true,
     "docker-compose": true,
     "dockerfile": true,
     "emmet": true,
     "fish": true,
     "git-firefly": true,
-    "gleam": true,
     "html": true,
     "log": true,
     "make": true,
