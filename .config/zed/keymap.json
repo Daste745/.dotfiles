@@ -45,7 +45,8 @@
       "space B": "git::Blame",
       "space c": "workspace::ToggleCenteredLayout",
       "g r": "editor::FindAllReferences",
-      "g t": "editor::GoToTypeDefinition"
+      "g t": "editor::GoToTypeDefinition",
+      "shift-alt-c": "workspace::CopyRelativePath"
     }
   },
   {
