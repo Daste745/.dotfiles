@@ -2,7 +2,7 @@
   {
     "bindings": {
       "ctrl-j": "menu::SelectNext",
-      "ctrl-k": "menu::SelectPrev"
+      "ctrl-k": "menu::SelectPrevious"
     }
   },
   {
@@ -42,7 +42,7 @@
     "context": "Editor && vim_mode == normal",
     "bindings": {
       "space space": "pane::TogglePreviewTab",
-      "space B": "editor::ToggleGitBlame",
+      "space B": "git::Blame",
       "space c": "workspace::ToggleCenteredLayout",
       "g r": "editor::FindAllReferences",
       "g t": "editor::GoToTypeDefinition"
@@ -52,7 +52,7 @@
     "context": "Editor && (vim_mode == insert || vim_mode == normal)",
     "bindings": {
       "ctrl-j": "editor::ContextMenuNext",
-      "ctrl-k": "editor::ContextMenuPrev"
+      "ctrl-k": "editor::ContextMenuPrevious"
     }
   },
   {
