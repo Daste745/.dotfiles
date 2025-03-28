@@ -29,8 +29,9 @@
 [alias]
     lg = log --graph --abbrev-commit --decorate --format="format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
     unpushed = log --branches --not --remotes --no-walk --decorate --oneline
-    # FIXME: Diff against the nearest parent, not `dev`
-    branch-summary = "!f() { git diff --compact-summary $(git merge-base ${1:-dev} @) @; }; f"
-    branch-diff = "!f() { git diff $(git merge-base ${1:-dev} @) @; }; f"
+    # Find the base of the current branch, defaulting to the `GIT_DEFAULT_BRANCH` env if not provided
+    branch-base = "!f() { git merge-base ${1:-$GIT_DEFAULT_BRANCH} @; }; f"
+    branch-summary = "!f() { git diff --compact-summary $(git branch-base $1) @; }; f"
+    branch-diff = "!f() { git diff $(git branch-base $1) @; }; f"
     # branch-summary, but grepped for `migrations` - useful for Django
-    branch-migrations = "!f() { git diff --name-only $(git merge-base ${1:-dev} @) @ | grep migrations; }; f"
+    branch-migrations = "!f() { git diff --name-only $(git branch-base $1) @ | grep migrations; }; f"
