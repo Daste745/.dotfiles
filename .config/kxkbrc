@@ -1,3 +1,7 @@
 [Layout]
+DisplayNames=
+LayoutList=pl
 Options=caps:escape,altwin:prtsc_rwin
 ResetOldOptions=true
+Use=true
+VariantList=
