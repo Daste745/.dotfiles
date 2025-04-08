@@ -57,6 +57,9 @@
       "max_severity": null
     }
   },
+  "edit_predictions": {
+    "mode": "eager"
+  },
   "vertical_scroll_margin": 5,
   "use_smartcase_search": true,
   "file_scan_exclusions": [
