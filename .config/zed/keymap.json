@@ -1,5 +1,6 @@
 [
   {
+    "context": "menu",
     "bindings": {
       "ctrl-j": "menu::SelectNext",
       "ctrl-k": "menu::SelectPrevious"
@@ -10,6 +11,13 @@
     "bindings": {
       "ctrl-shift-j": "editor::ExpandExcerptsDown",
       "ctrl-shift-k": "editor::ExpandExcerptsUp"
+    }
+  },
+  {
+    "context": "Pane && !menu",
+    "bindings": {
+      "ctrl-\\": "pane::SplitRight",
+      "ctrl-|": "pane::SplitDown"
     }
   },
   {
