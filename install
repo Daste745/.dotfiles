@@ -58,7 +58,7 @@ stow -v 2 .
 
 # Try to decrypt using keys from the GPG keyring
 # If this fails the user has to manually provide a symmetric key or try to decrypt secrets again
-git crypt unlock
+git crypt unlock || echo "Failed git-crypt unlock"
 
 # Set fish as the default shell
 echo "Setting fish as the default shell..."
