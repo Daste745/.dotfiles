@@ -54,7 +54,7 @@ fi
 
 # Install dotfiles
 echo "Installing dotfiles..."
-stow -v 2 .
+stow -v 2 --target="$HOME" .
 
 # Try to decrypt using keys from the GPG keyring
 # If this fails the user has to manually provide a symmetric key or try to decrypt secrets again
