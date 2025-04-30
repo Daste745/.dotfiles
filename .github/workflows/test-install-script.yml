@@ -1,0 +1,25 @@
+name: Test Install Script
+
+on:
+  push:
+
+jobs:
+  test-install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          # - ubuntu-22.04  # uses old enough fish version to not be worth the hassle
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run install script
+        run: |
+          chmod u+x ./install
+          ./install
+
+      # TODO: Some tests

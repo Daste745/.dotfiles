@@ -8,11 +8,9 @@ if [ $(uname -s) == "Linux" ]; then
     DISTRO="$(cat /etc/os-release | grep -E '^ID=' | cut -d '=' -f 2 | sed 's/"//g')"
     case "$DISTRO" in
         "arch" | "endeavouros" | "manjaro")
-            OS="arch"
             PACKAGE_MANAGER="pacman"
             ;;
         "ubuntu" | "debian")
-            OS="debian"
             PACKAGE_MANAGER="apt"
             ;;
         *)
@@ -23,9 +21,8 @@ else
     echo "Unsupported OS: $(uname -s). Packages won't be installed automatically."
 fi
 
-if [ -n "${OS+x}" ]; then
-    echo "Detected OS: $OS"
-    echo "Package manager: $PACKAGE_MANAGER"
+if [ -n "${PACKAGE_MANAGER+x}" ]; then
+    echo "Detected package manager: $PACKAGE_MANAGER"
 fi
 
 # Ensure ~/.config exists
@@ -50,15 +47,17 @@ if [ -n "${PACKAGE_MANAGER+x}" ]; then
             echo "Unsupported package manager: $PACKAGE_MANAGER. Packages won't be installed automatically."
             ;;
     esac
+else
+    echo "Skipping package installation as no package manager was detected."
 fi
 
 # Install dotfiles
 echo "Installing dotfiles..."
-stow -v 2 .
+stow -v 2 --target="$HOME" .
 
 # Try to decrypt using keys from the GPG keyring
 # If this fails the user has to manually provide a symmetric key or try to decrypt secrets again
-git crypt unlock
+git crypt unlock || echo "Failed git-crypt unlock"
 
 # Set fish as the default shell
 echo "Setting fish as the default shell..."
