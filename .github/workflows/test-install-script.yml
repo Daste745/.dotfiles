@@ -1,0 +1,18 @@
+name: Test Install Script
+
+on:
+  push:
+
+jobs:
+  test-install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run install script
+        run: |
+          chmod +x install.sh
+          ./install
+
+      # TODO: Some tests
