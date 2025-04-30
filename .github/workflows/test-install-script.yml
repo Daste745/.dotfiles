@@ -12,7 +12,7 @@ jobs:
 
       - name: Run install script
         run: |
-          chmod +x install.sh
+          chmod u+x ./install
           ./install
 
       # TODO: Some tests
