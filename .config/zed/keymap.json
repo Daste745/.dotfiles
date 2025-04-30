@@ -1,6 +1,5 @@
 [
   {
-    "context": "menu",
     "bindings": {
       "ctrl-j": "menu::SelectNext",
       "ctrl-k": "menu::SelectPrevious"
