@@ -52,7 +52,7 @@
       "space space": "pane::TogglePreviewTab",
       "space B": "git::Blame",
       "space c": "workspace::ToggleCenteredLayout",
-      "g r": "editor::FindAllReferences",
+      "g r": "editor::FindAllReferences", // from helix keymap
       "g t": "editor::GoToTypeDefinition",
       "shift-alt-c": "workspace::CopyRelativePath"
     }
@@ -75,7 +75,9 @@
     "context": "Terminal",
     "bindings": {
       // Close terminal when toggling out of it
-      "ctrl-`": "workspace::ToggleBottomDock"
+      "ctrl-`": "workspace::ToggleBottomDock",
+      "ctrl-j": null,
+      "ctrl-k": null
     }
   }
 ]
