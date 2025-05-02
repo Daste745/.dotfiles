@@ -58,7 +58,7 @@ abbr gr git rebase
 abbr gri git rebase -i
 abbr grc git rebase --continue
 abbr gra git rebase --abort
-abbr grs git rebase --show-current-patch
+abbr grcp git rebase --show-current-patch
 ## diff
 abbr gd git diff
 abbr gdc git diff --cached
