@@ -60,8 +60,19 @@
       "max_severity": null
     }
   },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
   "edit_predictions": {
     "mode": "eager"
+  },
+  "agent": {
+    "model_parameters": [],
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
   },
   "vertical_scroll_margin": 5,
   "use_smartcase_search": true,
