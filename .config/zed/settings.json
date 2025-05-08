@@ -47,6 +47,9 @@
   "collaboration_panel": {
     "button": false
   },
+  "notification_panel": {
+    "button": false
+  },
   "diagnostics": {
     "include_warnings": false,
     "inline": {
