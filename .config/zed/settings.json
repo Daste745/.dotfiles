@@ -143,6 +143,7 @@
       "show_wrap_guides": true,
       "wrap_guides": [100],
       "language_servers": ["!pylsp", "..."],
+      // "language_servers": ["!pyright", "..."],
       "format_on_save": [
         {
           "code_actions": {
@@ -218,18 +219,29 @@
       }
     },
     "pylsp": {
+      "binary": {
+        "path": ".venv/bin/pylsp"
+      },
       "settings": {
         "plugins": {
           "pylsp_mypy": {
             "enabled": true,
-            "dmypy": false, // Disables live_mode
-            "report_progress": true,
-            "overrides": ["--python-executable", ".venv/bin/python", true]
+            "live_mode": true,
+            "dmypy": false,
+            "strict": true,
+            "report_progress": true
           },
-          "pycodestyle": { "enabled": false },
-          "pylint": { "enabled": false },
+          // TODO: Black
+          "isort": { "enabled": true },
+          "rope": { "enabled": true },
+          "rope_autoimport": { "enabled": true },
+          "rope_completion": { "enabled": true },
           "pyflakes": { "enabled": false },
-          "flake8": { "enabled": false }
+          "mccabe": { "enabled": false },
+          "pycodestyle": { "enabled": false },
+          "autopep8": { "enabled": false },
+          "pylint": { "enabled": false },
+          "yapf": { "enabled": false }
         }
       }
     },
