@@ -28,7 +28,15 @@
       "ctrl-{": "editor::Fold",
       "ctrl-}": "editor::UnfoldLines",
       "ctrl-\\": "pane::SplitRight",
-      "ctrl-|": "pane::SplitDown"
+      "ctrl-|": "pane::SplitDown",
+      "ctrl-alt-left": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "left" }
+      ],
+      "ctrl-alt-right": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "right" }
+      ]
     }
   },
   {
