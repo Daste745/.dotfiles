@@ -246,6 +246,19 @@
         }
       }
     },
+    "rust-analyzer": {
+      "initialization_options": {
+        "rust": {
+          "analyzerTargetDir": true
+        },
+        "cargo": {
+          "allTargets": false
+        },
+        "check": {
+          "workspace": false
+        }
+      }
+    },
     "zls": {
       "initialization_options": {
         "enable_build_on_save": true
