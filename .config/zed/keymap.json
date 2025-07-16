@@ -3,7 +3,8 @@
     "bindings": {
       "ctrl-j": "menu::SelectNext",
       "ctrl-k": "menu::SelectPrevious",
-      "ctrl-shift-r": "projects::OpenRecent"
+      "ctrl-shift-r": "projects::OpenRecent",
+      "ctrl-f5": "debugger::Detach"
     }
   },
   {
@@ -59,6 +60,7 @@
       "space space": "pane::TogglePreviewTab",
       "space B": "git::Blame",
       "space c": "workspace::ToggleCenteredLayout",
+      "space b": "editor::ToggleBreakpoint",
       "g r": "editor::FindAllReferences", // from helix keymap
       "g t": "editor::GoToTypeDefinition",
       "shift-alt-c": "workspace::CopyRelativePath"
