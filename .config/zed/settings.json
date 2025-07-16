@@ -70,10 +70,9 @@
     "default_profile": "write",
     "model_parameters": [],
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet"
-    },
-    "version": "2"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    }
   },
   "vertical_scroll_margin": 5,
   "use_smartcase_search": true,
@@ -136,9 +135,6 @@
     "wakatime": true,
     "zig": true,
     "xml": true
-  },
-  "jupyter": {
-    "enabled": false
   },
   "languages": {
     "Python": {
