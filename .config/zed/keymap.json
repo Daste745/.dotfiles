@@ -26,8 +26,6 @@
     "bindings": {
       "ctrl-f": "buffer_search::Deploy",
       "ctrl-b": "workspace::ToggleLeftDock",
-      "ctrl-{": "editor::Fold",
-      "ctrl-}": "editor::UnfoldLines",
       "ctrl-\\": "pane::SplitRight",
       "ctrl-|": "pane::SplitDown",
       "ctrl-alt-left": [
