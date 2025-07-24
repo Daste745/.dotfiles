@@ -61,6 +61,7 @@
       "space b": "editor::ToggleBreakpoint",
       "g r": "editor::FindAllReferences", // from helix keymap
       "g t": "editor::GoToTypeDefinition",
+      "g b": "editor::BlameHover",
       "shift-alt-c": "workspace::CopyRelativePath"
     }
   },
