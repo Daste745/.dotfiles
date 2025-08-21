@@ -1,0 +1,10 @@
+# https://ghostty.org/docs/config
+# View all available options: ghostty +show-config --default --docs
+# Reload config: {ctrl,cmd}+shift+,
+
+maximize = true
+
+theme = Afterglow
+
+font-family = "Maple Mono"
+font-size = 12
