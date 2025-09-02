@@ -26,7 +26,8 @@
   "icon_theme": "Colored Zed Icons Theme Dark",
   "use_system_path_prompts": false,
   "tab_bar": {
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
   },
   "tabs": {
     "file_icons": true,
