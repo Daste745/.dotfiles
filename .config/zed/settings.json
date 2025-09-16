@@ -222,7 +222,8 @@
         "basedpyright.analysis": {
           "typeCheckingMode": "standard",
           "inlayHints": {
-            "variableTypes": false
+            "variableTypes": false,
+            "callArgumentNames": false
           }
         }
       }
