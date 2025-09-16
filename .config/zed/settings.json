@@ -219,43 +219,6 @@
         }
       }
     },
-    "pyright": {
-      "settings": {
-        "python": {
-          "pythonPath": ".venv/bin/python"
-        },
-        "python.analysis": {
-          "typeCheckingMode": "standard"
-        }
-      }
-    },
-    "pylsp": {
-      "binary": {
-        "path": ".venv/bin/pylsp"
-      },
-      "settings": {
-        "plugins": {
-          "pylsp_mypy": {
-            "enabled": true,
-            "live_mode": true,
-            "dmypy": false,
-            "strict": true,
-            "report_progress": true
-          },
-          // TODO: Black
-          "isort": { "enabled": true },
-          "rope": { "enabled": true },
-          "rope_autoimport": { "enabled": true },
-          "rope_completion": { "enabled": true },
-          "pyflakes": { "enabled": false },
-          "mccabe": { "enabled": false },
-          "pycodestyle": { "enabled": false },
-          "autopep8": { "enabled": false },
-          "pylint": { "enabled": false },
-          "yapf": { "enabled": false }
-        }
-      }
-    },
     "rust-analyzer": {
       "initialization_options": {
         "rust": {
