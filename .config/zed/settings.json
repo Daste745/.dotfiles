@@ -159,7 +159,14 @@
           // https://github.com/zed-industries/zed/discussions/6597
           "external": {
             "command": ".venv/bin/python",
-            "arguments": ["-m", "black", "-", "--fast"]
+            "arguments": [
+              "-m",
+              "black",
+              "--stdin-filename",
+              "{buffer_path}",
+              "--fast",
+              "-"
+            ]
           }
         }
       ],
@@ -211,6 +218,7 @@
   "lsp": {
     "basedpyright": {
       "settings": {
+        "python.pythonPath": ".venv/bin/python",
         "basedpyright.analysis": {
           "typeCheckingMode": "standard",
           "inlayHints": {
