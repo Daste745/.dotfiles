@@ -82,8 +82,6 @@
   {
     "context": "Terminal",
     "bindings": {
-      // Close terminal when toggling out of it
-      "ctrl-`": "workspace::ToggleBottomDock",
       "ctrl-j": null
     }
   },
