@@ -86,5 +86,12 @@
       "ctrl-`": "workspace::ToggleBottomDock",
       "ctrl-j": null
     }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-shift-j": ["workspace::DecreaseActiveDockSize", { "px": 0 }],
+      "ctrl-shift-k": ["workspace::IncreaseActiveDockSize", { "px": 0 }]
+    }
   }
 ]
