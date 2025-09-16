@@ -162,7 +162,10 @@
             "arguments": ["-m", "black", "-", "--fast"]
           }
         }
-      ]
+      ],
+      "inlay_hints": {
+        "enabled": true
+      }
     },
     "JavaScript": {
       "formatter": {
@@ -209,7 +212,10 @@
     "basedpyright": {
       "settings": {
         "basedpyright.analysis": {
-          "typeCheckingMode": "standard"
+          "typeCheckingMode": "standard",
+          "inlayHints": {
+            "variableTypes": false
+          }
         }
       }
     },
