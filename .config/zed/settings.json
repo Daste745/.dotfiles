@@ -142,8 +142,7 @@
     "Python": {
       "show_wrap_guides": true,
       "wrap_guides": [100],
-      "language_servers": ["!pylsp", "..."],
-      // "language_servers": ["!pyright", "..."],
+      "language_servers": ["basedpyright", "!pyright", "!pylsp", "..."],
       "format_on_save": [
         {
           "code_actions": {
@@ -207,6 +206,13 @@
     }
   },
   "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "typeCheckingMode": "standard"
+        }
+      }
+    },
     "pyright": {
       "settings": {
         "python": {
@@ -214,7 +220,6 @@
         },
         "python.analysis": {
           "typeCheckingMode": "standard"
-          // "typeCheckingMode": "standard" // Don't typecheck with pyright (when using pylsp)
         }
       }
     },
