@@ -9,10 +9,10 @@
 {
   "auto_update": false,
   "ui_font_family": "Maple Mono",
-  "ui_font_fallbacks": ["Zed Plex Mono"],
+  "ui_font_fallbacks": [".ZedMono"],
   "ui_font_size": 14,
   "buffer_font_family": "Maple Mono",
-  "buffer_font_fallbacks": ["Zed Plex Mono"],
+  "buffer_font_fallbacks": [".ZedMono"],
   "buffer_font_size": 14,
   "buffer_font_weight": 300,
   "buffer_line_height": {
