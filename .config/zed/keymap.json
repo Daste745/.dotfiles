@@ -8,7 +8,7 @@
     }
   },
   {
-    "context": "VimControl && !menu",
+    "context": "Editor && multibuffer",
     "bindings": {
       "ctrl-shift-j": "editor::ExpandExcerptsDown",
       "ctrl-shift-k": "editor::ExpandExcerptsUp"
@@ -82,7 +82,8 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-j": null
+      "ctrl-j": null,
+      "ctrl-b": "workspace::ToggleLeftDock"
     }
   },
   {
