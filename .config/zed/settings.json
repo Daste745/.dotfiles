@@ -218,9 +218,7 @@
   "lsp": {
     "basedpyright": {
       "settings": {
-        "python.pythonPath": ".venv/bin/python",
         "basedpyright.analysis": {
-          "typeCheckingMode": "standard",
           "inlayHints": {
             "variableTypes": false,
             "callArgumentNames": false
