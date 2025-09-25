@@ -130,7 +130,6 @@
     "html": true,
     "log": true,
     "make": true,
-    "ruff": true,
     "scss": true,
     "sql": true,
     "toml": true,
