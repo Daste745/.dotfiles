@@ -142,36 +142,7 @@
   },
   "languages": {
     "Python": {
-      "show_wrap_guides": true,
-      "wrap_guides": [100],
-      "language_servers": ["basedpyright", "!pyright", "!pylsp", "..."],
-      "format_on_save": [
-        {
-          "code_actions": {
-            "source.fixAll.ruff": true
-          }
-        },
-        {
-          "external": {
-            "command": ".venv/bin/python",
-            "arguments": ["-m", "isort", "-"]
-          }
-        },
-        {
-          // https://github.com/zed-industries/zed/discussions/6597
-          "external": {
-            "command": ".venv/bin/python",
-            "arguments": [
-              "-m",
-              "black",
-              "--stdin-filename",
-              "{buffer_path}",
-              "--fast",
-              "-"
-            ]
-          }
-        }
-      ],
+      "language_servers": ["!pyright", "!pylsp", "basedpyright", "ruff", "..."],
       "inlay_hints": {
         "enabled": true
       }
