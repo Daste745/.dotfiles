@@ -78,6 +78,9 @@
   },
   "vertical_scroll_margin": 5,
   "use_smartcase_search": true,
+  "search": {
+    "button": false
+  },
   "file_scan_exclusions": [
     "**/.git",
     "**/.svn",
